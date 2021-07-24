@@ -21,7 +21,7 @@ io.on('connection', socket =>{
      socket.join(roomId)
      socket.to(roomId).emit('user-connected',userID)
      socket.on('disconnect', () => {
-        socket.to(roomId).broadcast.emit('user-disconnected', userID)
+        socket.to(roomId).emit('user-disconnected', userID)
           })
 
     })
